@@ -28,8 +28,8 @@ def keep_alive():
 
 def Main_dta(): 
 	Mn_urls = str(requests.get("https://raw.githubusercontent.com/AnkurKumarji/Machine/feat/add-feedback-section/Zagl.Links").text).splitlines()
-	Selected_Link = str(requests.get("https://armitage.ml/").text).split(".")
-	if len(Mn_urls)<=int(Selected_Link[1]): Selected_Url = Mn_urls[0];requests.get("https://armitage.ml/reset.php")
+	Selected_Link = str(requests.get("https://Armitage.ankurkumar8.repl.co").text).split(".")
+	if len(Mn_urls)<=int(Selected_Link[1]): Selected_Url = Mn_urls[0];requests.get("https://Armitage.ankurkumar8.repl.co/reset.php")
 	else:
 		Selected_Url = Mn_urls[int(Selected_Link[1])]
 		print(len(Mn_urls),Selected_Link,Selected_Url)
