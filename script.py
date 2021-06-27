@@ -35,7 +35,7 @@ def Main_dta():
 		print(len(Mn_urls),Selected_Link,Selected_Url)
 	 
 	s,url = 'Ankur Kumar',"https://za.gl/links/go"
-	headers = {"user-agent": "Mozilla/5.0 (Linux; Android 10; Redmi Note 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36", "accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate", "sec-fetch-dest": "document", "accept-language": "en-GB,en;q=0.9"}
+	headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36", "accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate", "sec-fetch-dest": "document", "accept-language": "en-GB,en;q=0.9"}
 	response = requests.get(Selected_Url,headers=headers)
 	Cook = response.cookies.get_dict()
 	soup = BeautifulSoup(response.content, 'lxml')
