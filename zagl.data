@@ -27,7 +27,7 @@ def keep_alive():
     t.start()
 
 def Main_dta(): 
-	Mn_urls = str(requests.get("https://raw.githubusercontent.com/Ankur4299/m_bit/master/links-Za.gl.txt").text).splitlines()
+	Mn_urls = str(requests.get("https://raw.githubusercontent.com/AnkurKumarji/Machine/feat/add-feedback-section/Zagl.Links").text).splitlines()
 	Selected_Link = str(requests.get("https://armitage.ml/").text).split(".")
 	if len(Mn_urls)<=int(Selected_Link[1]): Selected_Url = Mn_urls[0];requests.get("https://armitage.ml/reset.php")
 	else:
