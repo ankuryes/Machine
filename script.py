@@ -56,8 +56,8 @@
 # 		sleep(24*61*60)
 # 	sleep(60*5)
 
-# from os import system
-# system("pip install selenium >null")
+from os import system
+system("pip install selenium >null")
 from selenium import webdriver
 import requests
 from selenium.webdriver.chrome.options import Options
