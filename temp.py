@@ -1,13 +1,14 @@
-import requests
+import grequests
 from time import sleep
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-urls = []
-for i in range(9): urls.append(str(f"https://zagl{i+1}.ankurkumar8.repl.co"))
 while True:
-  try:
-    for i in urls: requests.get(i,verify=False)
-    sleep(10800)
-  except: print("loop_error")
-  print("Done")
+    try:
+        urls = []
+        for i in range(9): urls.append(str(f"http://zagl{i+1}.ankurkumar8.repl.co"))
+        rs = (grequests.get(u,timeout=10) for u in urls)
+        grequests.map(rs)
+        print("Done")
+        sleep(10800)
+    except:
+        print("Not Fully Function")
+        sleep(3600)
