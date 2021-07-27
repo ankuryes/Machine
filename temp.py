@@ -1,14 +1,11 @@
-import grequests
+import requests
 from time import sleep
 
 while True:
     try:
-        urls = []
-        for i in range(9): urls.append(str(f"http://zagl{i+1}.ankurkumar8.repl.co"))
-        rs = (grequests.get(u,timeout=10) for u in urls)
-        grequests.map(rs)
+        requests.get("https://Zaglmain.ankurkumar8.repl.co")
         print("Done")
-        sleep(10800)
+        sleep(3*3600)
     except:
-        print("Not Fully Function")
+        print("Not Fully Load")
         sleep(3600)
