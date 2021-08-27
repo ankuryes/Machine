@@ -1,30 +1,15 @@
 from os import system
 system("pip install bs4 >null")
 system("pip install lxml >null")
-import base64,random
+import base64
 import requests
 from time import sleep
-import datetime
-from flask import Flask
 from threading import Thread
 from urllib import parse as Encode1
 from bs4 import BeautifulSoup
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-system("clear")
 
-app = Flask('')
-@app.route('/')
-def home():
-    resp = Main_dta()
-    return str(resp)
-
-def run():
-  app.run(host='0.0.0.0',port=random.randint(2000, 9000))
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
 
 def Main_dta(): 
   # -----Request 1-------
@@ -64,8 +49,4 @@ def Main_dta():
   print(Fnl_req.text,Fnl_req.cookies.get_dict(),"Ankur Kumar")
   return str(Fnl_req.text)
 
-keep_alive()
-while True:
-	while True:
-		sleep(24*61*60)
-	sleep(60*5)
+Main_dta()
