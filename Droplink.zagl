@@ -15,6 +15,24 @@ while True:
     try:
         ip = str(requests.get("http://ipinfo.io/ip").text)
         print("+",ip)
+        
+        urlshortx = "https://m.bdnewsx.com/git"
+        headers = {'Host': 'm.bdnewsx.com','User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Referer': 'https://techrfour.com/2021/05/17/top-reason-to-buy-a-child-education-insurance-plan/'}
+        res1 = requests.get(urlshortx , headers=headers)
+        Cook = res1.cookies.get_dict()
+        Cook.update({'ab': '2','prefetchAd_3113442': 'true'})
+
+        soup = BeautifulSoup(res1.text, 'html.parser')
+        ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
+        Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
+        Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
+
+        sleep(5)
+
+        headers = {'Host': 'm.bdnewsx.com','User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0','Accept': 'application/json, text/javascript, */*; q=0.01','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest','Origin': 'https://m.bdnewsx.com','Referer': urlshortx,'Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-origin','Te': 'trailers'}
+        data = f'_method=POST&_csrfToken={Cook["csrfToken"]}&ad_form_data={ad_form}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}'
+        Mn_req = requests.post('https://m.bdnewsx.com/links/go', headers=headers, cookies=Cook, data=data)
+#         print(Mn_req.text)
 
         Mn_urls = str(requests.get("https://raw.githubusercontent.com/AnkurKumarji/Machine/feat/add-feedback-section/Zagl.Links").text).splitlines()
         Selected_Link = str(requests.get("https://Armitage.ankurkumar8.repl.co/").text).split(".")
