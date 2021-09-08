@@ -15,6 +15,7 @@ while True:
             requests.get("https://Armitage.ankurkumar8.repl.co/reset.php");Selected_Url = Mn_urls[0]
         else:
             Selected_Url = Mn_urls[int(Selected_Link[1])];print(len(Mn_urls), Selected_Link, Selected_Url)
+
         Selected_Url = Selected_Url.replace("zee.gl","za.gl")
 
         req = requests.Session()
@@ -22,6 +23,7 @@ while True:
 
         headers = {"user-agent": useragent,"accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate", "sec-fetch-dest": "document","accept-language": "en-GB,en;q=0.9"}
         res1 = req.get(Selected_Url, headers=headers)
+        print(res1.cookies.get_dict())
         soup = BeautifulSoup(res1.text, 'html.parser')
         Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
         Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
@@ -33,8 +35,8 @@ while True:
 
         headers = {'Host': 'za.gl','User-Agent': useragent,'Accept': 'text/html','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://za.gl','Referer': Selected_Url}
         data = f'_method=POST&_csrfToken={res1.cookies.get_dict()["csrfToken"]}&ref=&f_n=slc&dot=1&givenX={givenX}&givenY={givenY}&X={base64data[0]}&Y={base64data[1]}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}'
-        res2 = req.post(Selected_Url, headers=headers,data=data,timeout=10)
-        soup = BeautifulSoup(res2.content, 'lxml')
+        res2 = req.post(Selected_Url, headers=headers,data=data)
+        soup = BeautifulSoup(res2.text, 'html.parser')
         ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
         Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
         Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
