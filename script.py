@@ -14,7 +14,7 @@ def internet_on():
 while True:
     try:
         ip = str(requests.get("http://ipinfo.io/ip").text)
-        print(f"\n+{ip}",end=" ")
+        print(f"{ip}",end=" ")
 
         Mn_urls = str(requests.get("https://raw.githubusercontent.com/AnkurKumarji/Machine/feat/add-feedback-section/Zagl.Links").text).splitlines()
         Selected_Link = str(requests.get("https://Armitage.ankurkumar8.repl.co/").text).split(".")
