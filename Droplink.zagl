@@ -55,7 +55,7 @@ while True:
         data = f"_method=POST&_csrfToken={Cook['csrfToken']}&ad_form_data={ad_form}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}"
         mn_req = requests.post("https://za.gl/links/go", headers=headers, cookies=Cook, data=data, timeout=3)
         if "Go With earning :)" in mn_req.text: print('Req1',end=" ")
-        else: print("Req1_Err.")
+        else: print("Req1_Err.",end=" ")
 
         # --------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ while True:
 
         Fnl_req = requests.post('https://droplink.co/links/go', headers=headers, cookies=main_cook, data=data)
         if "Go With earning :)" in Fnl_req.text: print('Req2',end=" ")
-        else: print("Req1_Err.")
+        else: print("Req2_Err.",end=" ")
 
         while True:
             new_ip = str(requests.get("http://ipinfo.io/ip").text)
