@@ -1,5 +1,3 @@
-from os import system
-system("pip3 install bs4")
 import requests
 from time import sleep
 from bs4 import BeautifulSoup
@@ -16,6 +14,7 @@ def internet_on():
 while True:
     try:
         ip = str(requests.get("http://ipinfo.io/ip").text)
+        print(f"\n+{ip}",end=" ")
 
         Mn_urls = str(requests.get("https://raw.githubusercontent.com/AnkurKumarji/Machine/feat/add-feedback-section/Zagl.Links").text).splitlines()
         Selected_Link = str(requests.get("https://Armitage.ankurkumar8.repl.co/").text).split(".")
@@ -25,7 +24,7 @@ while True:
             Selected_Url = Mn_urls[int(Selected_Link[1])].replace("zee.gl","za.gl")
 
         req = requests.Session()
-        useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36"
+        useragent = "Mozilla/5.0 (Linux; Android 11; RMX3241) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36"
 
         headers = {"user-agent": useragent,"accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate", "sec-fetch-dest": "document","accept-language": "en-GB,en;q=0.9"}
         res1 = req.get(Selected_Url, headers=headers)
@@ -55,11 +54,43 @@ while True:
         cookies = {"AppSession": Cook['AppSession'],"zagl_publisher": Cook['zagl_publisher'],"scr": Cook['scr'],"csrfToken": Cook['csrfToken'],"visitor": Cook['visitor'],"hash": Cook['hash'],"sls": "0","ref": "admin","browserprint": "8b009e12f3bad328ce10f5803a223ca11621cb5cdb5a207dca519f2e50565610","overlay": "1","ab": "2","sb_main_29b552ac181cd0b221e0fcc9e06f6754": "1","slv": "-1","sb_count_29b552ac181cd0b221e0fcc9e06f6754": "1"}
         data = f"_method=POST&_csrfToken={Cook['csrfToken']}&ad_form_data={ad_form}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}"
         mn_req = requests.post("https://za.gl/links/go", headers=headers, cookies=Cook, data=data, timeout=3)
-        if "success" in mn_req.text: print('Req1 Done..',ip)
+        if "Go With earning :)" in mn_req.text: print('Req1',end=" ")
+        else: print("Req1_Err.",end=" ")
+
+        # --------------------------------------------------------------------
+
+        req1 = requests.get("https://droplink.co/Zagl")
+        main_cook = req1.cookies.get_dict()
+
+        headers = {'Host': 'yoshare.net', 'User-Agent': useragent, 'Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded'}
+        data = 'clickarlink=Zagl'
+        req2 = requests.post('https://yoshare.net/', headers=headers, data=data)
+        soup = BeautifulSoup(req2.text, 'html.parser')
+        redi_url = str(soup.find("form", {"id": "yuidea"})['action'])
+
+        headers = {'Host': 'yoshare.net', 'User-Agent': useragent, 'Accept': 'text/html','Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded', 'Origin': 'https://yoshare.net','Referer': 'https://yoshare.net/', 'Sec-Fetch-User': '?1'}
+        data = 'clikarlink=Zagl&yuidea=&verify=Click+here+to+continue'
+        req3 = requests.post(f'{redi_url}', headers=headers, data=data)
+
+        headers = {'Host': 'droplink.co', 'User-Agent': useragent, 'Accept': 'text/html','Accept-Encoding': 'gzip, deflate', 'Referer': 'https://yoshare.net/', 'Sec-Fetch-User': '?1'}
+        req4 = requests.get('https://droplink.co/Zagl', headers=headers, cookies=main_cook)
+        soup = BeautifulSoup(req4.text, 'html.parser')
+        ad_form, Token, Token_unlocked = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value']), Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value']), Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
+
+        sleep(3)
+
+        main_cook['ab'] = '2'
+        headers = {'Host': 'droplink.co', 'User-Agent': useragent, 'Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://droplink.co','Referer': 'https://droplink.co/Zagl', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin'}
+        data = f"_method=POST&_csrfToken={main_cook['csrfToken']}&ad_form_data={ad_form}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}"
+
+        Fnl_req = requests.post('https://droplink.co/links/go', headers=headers, cookies=main_cook, data=data)
+        if "Go With earning :)" in Fnl_req.text: print('Req2',end=" ")
+        else: print("Req2_Err.",end=" ")
 
         while True:
             new_ip = str(requests.get("http://ipinfo.io/ip").text)
             if new_ip != ip:break
+            sleep(3)
     except:
         while True:
             if internet_on() == True:break
