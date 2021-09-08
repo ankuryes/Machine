@@ -1,3 +1,5 @@
+from os import system
+system('pip3 install bs4')
 import requests
 from time import sleep
 from bs4 import BeautifulSoup
