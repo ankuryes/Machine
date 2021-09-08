@@ -55,6 +55,7 @@ while True:
         data = f"_method=POST&_csrfToken={Cook['csrfToken']}&ad_form_data={ad_form}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}"
         mn_req = requests.post("https://za.gl/links/go", headers=headers, cookies=Cook, data=data, timeout=3)
         if "Go With earning :)" in mn_req.text: print('Req1',end=" ")
+        else: print("Req1_Err.")
 
         # --------------------------------------------------------------------
 
@@ -73,7 +74,7 @@ while True:
 
         headers = {'Host': 'droplink.co', 'User-Agent': useragent, 'Accept': 'text/html','Accept-Encoding': 'gzip, deflate', 'Referer': 'https://yoshare.net/', 'Sec-Fetch-User': '?1'}
         req4 = requests.get('https://droplink.co/Zagl', headers=headers, cookies=main_cook)
-        soup = BeautifulSoup(req4.content, 'lxml')
+        soup = BeautifulSoup(req4.text, 'html.parser')
         ad_form, Token, Token_unlocked = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value']), Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value']), Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
 
         sleep(3)
@@ -84,6 +85,7 @@ while True:
 
         Fnl_req = requests.post('https://droplink.co/links/go', headers=headers, cookies=main_cook, data=data)
         if "Go With earning :)" in Fnl_req.text: print('Req2',end=" ")
+        else: print("Req1_Err.")
 
         while True:
             new_ip = str(requests.get("http://ipinfo.io/ip").text)
