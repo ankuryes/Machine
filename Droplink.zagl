@@ -7,7 +7,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 def internet_on():
     try:
-        requests.get('http://ipinfo.io/ip')
+        requests.get('https://www.google.com/')
         return True
     except: return False
 
@@ -112,7 +112,7 @@ while True:
 
         while True:
             new_ip = str(requests.get("http://ipinfo.io/ip").text)
-            if new_ip != ip:break
+            if (new_ip!=ip) and (internet_on()==True):break
             sleep(3)
     except:
         while True:
