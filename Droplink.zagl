@@ -15,7 +15,7 @@ while True:
     try:
         useragent = "Mozilla/5.0 (Linux; Android 11; RMX3241) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36"
 
-        ip = str(requests.get("http://ipinfo.io/ip").text)
+        ip = str(requests.get("https://jsonip.com/").json()['ip'])
         print("+",ip)
 
         # #urlshortx.com Req1
@@ -111,7 +111,7 @@ while True:
         print('Complete')
 
         while True:
-            new_ip = str(requests.get("http://ipinfo.io/ip").text)
+            new_ip = str(requests.get("https://jsonip.com/").json()['ip'])
             if (new_ip!=ip) and (internet_on()==True):break
             sleep(3)
     except:
