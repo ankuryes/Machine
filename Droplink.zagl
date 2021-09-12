@@ -12,7 +12,7 @@ def internet_on():
 while True:
     try:
         useragent = "Mozilla/5.0 (Linux; Android 11; RMX3241) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36"
-        
+
         try: ip = str(requests.get("https://jsonip.com/").json()['ip'])
         except: ip = str(requests.get("http://ipinfo.io/ip").text)
 
@@ -56,12 +56,7 @@ while True:
 
 
         #Za.gl Req1
-        Mn_urls = str(requests.get("https://raw.githubusercontent.com/AnkurKumarji/Machine/feat/add-feedback-section/Zagl.Links").text).splitlines()
-        Selected_Link = str(requests.get("https://Armitage.ankurkumar8.repl.co/").text).split(".")
-        if int(Selected_Link[1]) >= len(Mn_urls):
-            requests.get("https://Armitage.ankurkumar8.repl.co/reset.php");Selected_Url = Mn_urls[0].replace("zee.gl", "za.gl")
-        else:
-            Selected_Url = Mn_urls[int(Selected_Link[1])].replace("zee.gl", "za.gl")
+        Selected_Url = str(requests.get("https://SelectZagl.ankurkumar8.repl.co").text)
 
         req = requests.Session()
         zagl_headers = {"user-agent": useragent, "accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate","sec-fetch-dest": "document", "accept-language": "en-GB,en;q=0.9"}
