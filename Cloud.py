@@ -12,7 +12,7 @@ print("Url Done")
 headers = {'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6ImFua3Vya3VtYXI0Mjk5QGdtYWlsLmNvbSIsInRpbWVzdGFtcCI6MTYzMTUxNDU0NX0.HKEjNCdfvnJ32PqEgVpWilPAySI9jBLD2AQrEhzpc4o','Client-Service': 'ExampurApp','Auth-Key': 'exampurapi','Host': 'exampur.appx.co.in','User-Agent': 'okhttp/3.12.12'}
 req = (grequests.get(u,headers=headers,timeout=3) for u in urls)
 data = grequests.map(req)
-with open(f"Exampur_{fl_name}.txt","a") as f:
+with open(f"Exampur{fl_name}.txt","a") as f:
     for i in data:
         try:
             i = i.json()
