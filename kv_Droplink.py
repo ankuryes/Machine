@@ -11,7 +11,7 @@ def internet_on():
 
 while True:
     try:
-        useragent = str(requests.get("https://urlshortxSelectLink.ankurkumar8.repl.co").text)
+        useragent = str(requests.get("https://useragent.ankurkumar8.repl.co").text)
 
         try: ip = str(requests.get("https://jsonip.com/").json()['ip'])
         except: ip = str(requests.get("http://ipinfo.io/ip").text)
