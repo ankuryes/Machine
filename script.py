@@ -13,7 +13,7 @@ def internet_on():
 
 while True:
     try:
-        useragent = "Mozilla/5.0 (Linux; Android 11; RMX3241) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Mobile Safari/537.36"
+        useragent = str(requests.get("https://urlshortxSelectLink.ankurkumar8.repl.co").text)
 
         try: ip = str(requests.get("https://jsonip.com/").json()['ip'])
         except: ip = str(requests.get("http://ipinfo.io/ip").text)
