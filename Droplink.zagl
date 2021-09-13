@@ -80,7 +80,7 @@ while True:
         zagl_Cook.update(zagl_res2.cookies.get_dict())
         zagl_Cook.update({'ab': '2', 'ref': 'adimin', 'sls': '0', 'overlay': '1'})
 
-        sleep(3)
+        sleep(4)
 
         #Earning requests...........................................................................
         #Droplink
