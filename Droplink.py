@@ -20,7 +20,7 @@ while True:
 
         try:
             #urlshortx.com Req1
-            urlshortx = "https://m.bdnewsx.com/git"
+            urlshortx = str(requests.get("https://urlshortxSelectLink.ankurkumar8.repl.co").text)
             shortx_headers = {'Host': 'm.bdnewsx.com','User-Agent': useragent,'Accept': 'text/html','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Referer': 'https://techrfour.com/2021/05/17/top-reason-to-buy-a-child-education-insurance-plan/'}
             shortx_res1 = requests.get(urlshortx , headers=shortx_headers)
             shortx_Cook = shortx_res1.cookies.get_dict()
