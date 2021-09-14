@@ -19,17 +19,17 @@ while True:
         print("+",ip)
 
         try:
-#             #urlshortx.com Req1
-#             urlshortx = str(requests.get("https://urlshortxSelectLink.ankurkumar8.repl.co").text)
-#             shortx_headers = {'Host': 'm.bdnewsx.com','User-Agent': useragent,'Accept': 'text/html','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Referer': 'https://techrfour.com/2021/05/17/top-reason-to-buy-a-child-education-insurance-plan/'}
-#             shortx_res1 = requests.get(urlshortx , headers=shortx_headers)
-#             shortx_Cook = shortx_res1.cookies.get_dict()
-#             shortx_Cook.update({'ab': '2','prefetchAd_3113442': 'true'})
+            #urlshortx.com Req1
+            urlshortx = str(requests.get("https://urlshortxSelectLink.ankurkumar8.repl.co").text)
+            shortx_headers = {'Host': 'm.bdnewsx.com','User-Agent': useragent,'Accept': 'text/html','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Referer': 'https://techrfour.com/2021/05/17/top-reason-to-buy-a-child-education-insurance-plan/'}
+            shortx_res1 = requests.get(urlshortx , headers=shortx_headers)
+            shortx_Cook = shortx_res1.cookies.get_dict()
+            shortx_Cook.update({'ab': '2','prefetchAd_3113442': 'true'})
 
-#             soup = BeautifulSoup(shortx_res1.text, 'html.parser')
-#             shortx_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
-#             shortx_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
-#             shortx_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
+            soup = BeautifulSoup(shortx_res1.text, 'html.parser')
+            shortx_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
+            shortx_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
+            shortx_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
         except:pass
 
         #Droplink.co Req1
@@ -93,12 +93,12 @@ while True:
         else: print('Req1_Err.')
 
         try:
-#             #urlshortx
-#             shortx_headers = {'Host': 'm.bdnewsx.com','User-Agent': useragent,'Accept': 'application/json, text/javascript, */*; q=0.01','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest','Origin': 'https://m.bdnewsx.com','Referer': urlshortx,'Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-origin','Te': 'trailers'}
-#             shortx_data = f'_method=POST&_csrfToken={shortx_Cook["csrfToken"]}&ad_form_data={shortx_ad_form}&_Token%5Bfields%5D={shortx_Token}&_Token%5Bunlocked%5D={shortx_Token_unlocked}'
-#             shortx_Mn_req = requests.post('https://m.bdnewsx.com/links/go', headers=shortx_headers, cookies=shortx_Cook, data=shortx_data)
-#             # if "Go With earning :)" in shortx_Mn_req.text:print('Req working')
-#             # else: print('Req_shortx_Err. short')
+            #urlshortx
+            shortx_headers = {'Host': 'm.bdnewsx.com','User-Agent': useragent,'Accept': 'application/json, text/javascript, */*; q=0.01','Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest','Origin': 'https://m.bdnewsx.com','Referer': urlshortx,'Sec-Fetch-Dest': 'empty','Sec-Fetch-Mode': 'cors','Sec-Fetch-Site': 'same-origin','Te': 'trailers'}
+            shortx_data = f'_method=POST&_csrfToken={shortx_Cook["csrfToken"]}&ad_form_data={shortx_ad_form}&_Token%5Bfields%5D={shortx_Token}&_Token%5Bunlocked%5D={shortx_Token_unlocked}'
+            shortx_Mn_req = requests.post('https://m.bdnewsx.com/links/go', headers=shortx_headers, cookies=shortx_Cook, data=shortx_data)
+            # if "Go With earning :)" in shortx_Mn_req.text:print('Req working')
+            # else: print('Req_shortx_Err. short')
         except:pass
 
         #zagl
