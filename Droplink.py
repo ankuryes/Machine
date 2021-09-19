@@ -39,7 +39,7 @@ def droplink_fung():
 def try2link_fung():
     dta = str('''luev,dDK3oTW,iKOTV,7dyDa8Ja,PM0j,aurauGe9,ymy0U,U13V4,nV2E,FwNT43f,H0aUrp,lMLZeD,DqaU0rP,NJkXKk8,SJQP4n1a,LGLc,kyZ6,9KRc88oy,cpAWzBW,y7i6ElE,vau2G4S,jXhGGY,NUVyn,aYJCJPU,Y4fdnh,1RpM3qX6,kGdWeg4,MtPu,4x0DoeP,TUoQN,d8Gc3dAo,Dg00,Kfmn,oNM2l,mz0UYl6K,IaZd,rdLcgUEu,ezwgT,4J02gp,BVQR8eQ,NsEm2w,b3DG,ro3Ov,OF401,HkOl,zxNb8XZ,HnrWwUz,rDvEl274,C62jgi,0b0f''')
     try2link_links = "https://try2link.com/"+str(random.choice(dta.split(",")))
-    return try2links
+    return try2link_links
 
 # ------------------------------------------------------------------
 
