@@ -36,10 +36,10 @@ def droplink_fung():
     droplink_links = "https://droplink.co/"+str(random.choice(dta.split(",")))
     return droplink_links
 
-def zagl_fung():
-    dta = str('''9DxoR,E35O,DUr1u1,OHj3,jnU6Qyu6,boY9RIql,ECIh,HPhL,QbKGb6W0,4o5FL,vmF25d,Tfm59,hY5p,WDvF,58TT2,h0fc6MKu,8t6FUin,k1dXwuf,8xAED,6hZ6J8,3n4E,vpfnvV,sY9AexOS,Vfqc52L,pZViU,IIRnlY,hmS0,827A2w,TbN53GkB,pZfChTAf,1vW7TLZm,kUzgeYAP,Ecs0P,ZWFW6a9p,fJAax,JW76FTh,LWUDv6,LnuA3,2xBNe,l0FkKBk,DATL95,OeZ0,vfkO,OZfE3Ql6,tprCm,q1CNz,Bh45Jha,AyMr,cHOEMXb,htkWvxb,R54MOre,9nOUrd8r,peh0FSp,bPmxen,KTMGg,xkbXhFqS,0IY3f87,BCXuoYpd,YumMm,OpmG,5qCe,XuaL,QwK3t,HhkH,uTfV,E8xwKknd,uNFEC5,tdTblm,XKyf0XS,o0vbJ5,dqI267mV,qgoDE16,POJtv,XPhdol,MBfWzFF,UKOmvCL,AIjJ,6RaQx9,IJKV,fmNDgnZ,nJe483t,CftdtjXG,A5WiE,yRwNz,igxMpi,UE0YY,6PtE5,Rrdr2lL,kVzkK,OLtQqp,vQibrr,KtKhbZG,pErVJL7,hlCGKet,,3rzw7MdZ,kQdF,GGezSCm,dBryu,r4ETSp,pYOyxAf2,PCT6,DvXuP,dBvoXg,d1fXxs,wET8,sxhP,AeZN,sSP0,UXIMi,VS5rU,tKXOHl,mx928HtP,NDFn,zyiW27Cl,xrdbZ,11vW2,dPqkPdIe,9GP2,r97oR6,vGPjk,YCri9Pg,J4AFmAjS,uC8Q3kFR,ObnMM8,4cpw,iwIc,60PL,dls4Gi,6n7gn,,kegDewv,d8mPr,Yq3z,H8nWC,UmIXY,HxrmuHyi,Lw1o39,IbAUNog,y2BIt4,rZcN,0zEqklEP,znsZMyeW,tfg5wk0,DBZJO,ivl1q,uzQ3ss,hvArkRk,G0Zl,sauQU7Jy,d21nlvvZ,Vcd9l8N,8pYyQRU,npUO,nZEa,Htdjq,wRwBBVKl,b8oVD,JPePyW,19Wrjd,edfIjyE,YppjBm,siOxgbm,f8iK,wNkJKdz6,BqTPQAvV,8zA8EJ74,RSyo6u,dxYhDZ,HK18Yu,4nXm,kQysH,o7q4,EAicq9H,74x8m8t,6axa,w3POJZmJ,iMUZe,Betg42,BBO4,1yUq3D,zsdWFcP8,usOX,t0QC,pfmtKa,bZJU,EiXoJ,LamAiU,jcE58m1,Naq4,V6j2ffR,rGzXS4,IJMkCh,TqT8pGl,hmt0,IQozk,gGapsH,pdMhRX,mb9Al,J7Ie0,FMpvK,oRtkqKI,mlBQlDR,zk9cv,BbnwO,KymxNC,873Ko1Xu,fDPT,4aKyXDp4,VHG0aJy,qn3exdX,73GyKS4v,csH8szE,WmdiS6P0,GhFuj,9V4nR,5ti8T6,uXy2i7dJ,Kdc1D,YrNY0i,zOdUDr2d,MOwr,RfrOxcEg,87CUNKg,m3fqeO,AJTN5X5U,9dF1e,ejAeM,wVHgWpT9,ohW8bets,1fLcV5I,AOELci5e,Dr3Ojor,JLf3nGA,ErC7F,ABH6Rwv,Zxn7Fod,jHA6qHb,bagl4o,BVqZVTS,CgSeD22,KipYb,AYWK,yFk3Xjn,p4tTD5,2kpUkCRY,Xor4s8WC,jUHM,Ox5Z,YPQBzyD,vL3x26,iJ0uSlj,tjBlr,uI8EpG,A8VLDk6Y,Px34RFL,GmlJ31e,LeLMBOT,LkWdb,qHB1,7p8wc,OfytQ,gaHw,7W6RG2S,XQtf4n,NawRH3X,dmNROv,PvAL,CDrQHUO,SvB1x,f4qK,F7ROL2j4,TGfq,tNssxDVX,70sj,NxJxP77,u73J7,MZL6EO,5DnF7uB,k6OIqz9j,jdIJFomP,onsIBlC,73APQ,UJOf0yB6,WjWh,VdpA,biJBSKn,3tiA8qPw,41BHLO,BvIn1B,JUp0mdt,xjl5V3ko,uy5ST,igqqyz,KK5tI,pLYv,uKjVZ2,HMm65eDD,AiJRC4,Kf6QP5,NF8EYlq,k4tVhr7m,a7j4k,BWk7,6J2gM90,rlSVLB,5knVD,eC2u7yb,dahfMm,bT5Ggm5S,FIMR8kWq,3sqyJ,cQuV1cy,UcA2,ikVr,sMwgeEI5,6ECptFO,E5SlIx,NqNt90,T3mc,JRmL1G,QRdL,MFGQH,DP0LcRSt,2tK2vv7,S4iv,FvdDHikg,SdjQJq4H,OveFg,nzdOCv,7Lxsp1,fQ6iY,NioEGd,M7TX4ruz,pnkFU,ynbweO,2LVR,ie5avWzi,QyOVKvdJ,MCxF,jOjMUxlO,1jhk0,NuVn0,a6dnk,R1oMc,askgTynz,MbhG,2RDClivX,u3jg,91tJn,rZf28,EvIpEx5,mIlK,p8Vv,5mMljG3,aGMbsMz,vmhjz57j,7UGWB,4I9VM,nbUHvlc,rIqTgxdU,vllN02,teneLDUd,ip8XXJu,MoD8lgM1,eVSY5xnM,dW6JEPEj,ssXAM1,19OQV5zr,t2O43kI,AD2S,yVjDTBl,cZiQD,BFfkwJ,l77xY,bb7BBb2K,HQYk,myNOXs,DLja76a,ICf4aPay,EX9wJ,shxH,PpZhOstN,1AhO,m5Ad,wIzx,EPArVa,7xK7Cy3,fI1fDO,MMe1aeK,sbeRW,QlnDw1fI,iDlIU,xhRek,t7MVB,7k7TmA,ZXlURL,AUi7R,MzBh7DU,vXYZ6Qx,Cyr3cku,IMZGAiIy,JCrNN,VlWzdr,cXYIF,KlBP,GFlvpA,O8cfnd,D8ks8c,Tjer,UFkB,xrNZrY,bnAKu,HXOcaE,pMXPgLO,nuDmvA,j8N00P,eiKpj,mcy0P,1C6NrCQm,4yIri17,QtiUGlD,XJlljorZ,zewszH,jUazWDS,kCQMD,5NhpY9a,IjG7DOA5,zTsP,l4DFXe,uvCAvnO,N62u,2DUZ1S,jQb4,XujVcwRl,hylZrTW6,sXYZ,wqFHdIWF,Otah9,xLEr,jnB1osY,03uq,wV8ATRZ,LXw5VnR,YcMq,k1Sf467,fUm69Yd,dfSQs,VMABWn5,iOquS,qlirwT,16ww3,uVUX4,aigZ,wHU5rB,u192k,b4XVB,fzZ4WvR,eeDEO1,sexOM,ZI7DE,rWst,5RESji,JvSxqTE,HdXPQ60,f2k8b,qDEkB6T,Tfox,l6uLT6C,kBXZ,0DrTlZ5s,BKpIr7co,8kkDDSsG,b5QKY62,7pWCYKCh,2HGU,AaasEQE,tqziy,BEh6VK7,nsYhHsbU,J5g6n,R4XHEX,dblqiv,aTnxLJ,kAnE,ReiGp,wUATQJSI,NqxFP92,zCKI,9TpY,uKsrz,VkRWW,uxCPgP,ijKPrrRH,kxeMj6x,W1Oq,PvjuzD,JrBpV5RQ,NxXF5Uy,rcw8''')
-    zagl_links = "https://za.gl/"+str(random.choice(dta.split(",")))
-    return "https://za.gl/UW2hD"
+def try2link_fung():
+    dta = str('''luev,dDK3oTW,iKOTV,7dyDa8Ja,PM0j,aurauGe9,ymy0U,U13V4,nV2E,FwNT43f,H0aUrp,lMLZeD,DqaU0rP,NJkXKk8,SJQP4n1a,LGLc,kyZ6,9KRc88oy,cpAWzBW,y7i6ElE,vau2G4S,jXhGGY,NUVyn,aYJCJPU,Y4fdnh,1RpM3qX6,kGdWeg4,MtPu,4x0DoeP,TUoQN,d8Gc3dAo,Dg00,Kfmn,oNM2l,mz0UYl6K,IaZd,rdLcgUEu,ezwgT,4J02gp,BVQR8eQ,NsEm2w,b3DG,ro3Ov,OF401,HkOl,zxNb8XZ,HnrWwUz,rDvEl274,C62jgi,0b0f''')
+    try2link_links = "https://try2link.com/"+str(random.choice(dta.split(",")))
+    return try2link_link
 
 # ------------------------------------------------------------------
 
@@ -93,32 +93,24 @@ while True:
         drop_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
 
 
-        #Za.gl Req1
-        Selected_Url = zagl_fung()
+        try2link_url = try2link_fung()
 
         req = requests.Session()
-        zagl_headers = {"user-agent": useragent, "accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate","sec-fetch-dest": "document", "accept-language": "en-GB,en;q=0.9"}
-        zagl_res1 = req.get(Selected_Url, headers=zagl_headers)
-        soup = BeautifulSoup(zagl_res1.text, 'html.parser')
-        zagl_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
-        zagl_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
-        givenX = Encode1.quote(soup.find('input', {'name': 'givenX'})['value'])
-        givenY = Encode1.quote(soup.find('input', {'name': 'givenY'})['value'])
-        data = str(soup.find('button', {'id': 'greendot'}).find('img')['src']).split('png;base64,')[1]
-        base64data = list(str(get_Color_Pixel_Cordinate(data)).replace('[', '').replace(']','').replace(' ', '').split(','))
+        try2link_req1 = str(req.get(try2link_url, allow_redirects=False).cookies.get_dict()['AppSession'])
 
-        zagl_headers = {'Host': 'za.gl', 'User-Agent': useragent, 'Accept': 'text/html', 'Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://za.gl', 'Referer': Selected_Url}
-        zagl_data = f'_method=POST&_csrfToken={zagl_res1.cookies.get_dict()["csrfToken"]}&ref=&f_n=slc&dot=1&givenX={givenX}&givenY={givenY}&X={base64data[0]}&Y={base64data[1]}&_Token%5Bfields%5D={zagl_Token}&_Token%5Bunlocked%5D={zagl_Token_unlocked}'
-        zagl_res2 = req.post(Selected_Url, headers=zagl_headers, data=zagl_data)
-        soup = BeautifulSoup(zagl_res2.text, 'html.parser')
-        zagl_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
-        zagl_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
-        zagl_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
-        zagl_Cook = zagl_res1.cookies.get_dict()
-        zagl_Cook.update(zagl_res2.cookies.get_dict())
-        zagl_Cook.update({'ab': '2', 'ref': 'adimin', 'sls': '0', 'overlay': '1'})
+        try2link_headers = {'Host': 'try2link.com', 'User-Agent': useragent, 'Accept': 'text/html','Accept-Encoding': 'gzip, deflate', 'Referer': 'https://newforex.online/'}
+        try2link_params = (('d', int(time()) + (60 * 4)),)
+        try2link_req2 = req.get(try2link_url, headers=try2link_headers, params=try2link_params,cookies={'AppSession': try2link_req1})
 
-        sleep(4)
+        soup = BeautifulSoup(try2link_req2.text, 'html.parser')
+        try2link_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
+        try2link_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
+        try2link_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
+
+        try2link_Cook = try2link_req2.cookies.get_dict()
+        try2link_Cook.update({'ab': '2', 'AppSession': try2link_req1, 'prefetchAd_4262220': 'true'})
+
+        sleep(5)
 
         #Earning requests...........................................................................
         #Droplink
@@ -138,12 +130,11 @@ while True:
             # else: print('Req_shortx_Err. short')
         except:pass
 
-        #zagl
-        zagl_headers = {"accept": "application/json, text/javascript, */*; q=0.01", "x-requested-with": "XMLHttpRequest","user-agent": useragent, "content-type": "application/x-www-form-urlencoded; charset=UTF-8","origin": "https://za.gl", "sec-fetch-site": "same-origin", "sec-fetch-mode": "cors","sec-fetch-dest": "empty", "referer": Selected_Url}
-        zagl_data = f"_method=POST&_csrfToken={zagl_Cook['csrfToken']}&ad_form_data={zagl_ad_form}&_Token%5Bfields%5D={zagl_Token}&_Token%5Bunlocked%5D={zagl_Token_unlocked}"
-        zagl_Mn_req = requests.post("https://za.gl/links/go", headers=zagl_headers, cookies=zagl_Cook, data=zagl_data, timeout=3)
-        if "Go With earning :)" in zagl_Mn_req.text:print('Req2')
-        else:print('Req2_Err.')
+        try2link_headers = {'Host': 'try2link.com', 'User-Agent': useragent, 'Accept': 'application/json, text/javascript','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://try2link.com', 'Referer': try2link_url}
+        try2link_data = f"_method=POST&_csrfToken={try2link_Cook['csrfToken']}&ad_form_data={try2link_ad_form}&_Token%5Bfields%5D={try2link_Token}&_Token%5Bunlocked%5D={try2link_Token_unlocked}"
+        try2link_Mn_req3 = req.post('https://try2link.com/links/go', headers=try2link_headers, cookies=try2link_Cook,data=try2link_data)
+        if "0." in try2link_Mn_req3.text: print('Req2')
+        else: print('Req2_Err.')
 
         print('Complete')
 
