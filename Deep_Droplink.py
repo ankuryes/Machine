@@ -93,32 +93,24 @@ while True:
         drop_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
 
 
-        #Za.gl Req1
-        Selected_Url = zagl_fung()
+        try2link_url = try2link_fung()
 
         req = requests.Session()
-        zagl_headers = {"user-agent": useragent, "accept": "text/html", "sec-fetch-site": "none", "sec-fetch-mode": "navigate","sec-fetch-dest": "document", "accept-language": "en-GB,en;q=0.9"}
-        zagl_res1 = req.get(Selected_Url, headers=zagl_headers)
-        soup = BeautifulSoup(zagl_res1.text, 'html.parser')
-        zagl_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
-        zagl_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
-        givenX = Encode1.quote(soup.find('input', {'name': 'givenX'})['value'])
-        givenY = Encode1.quote(soup.find('input', {'name': 'givenY'})['value'])
-        data = str(soup.find('button', {'id': 'greendot'}).find('img')['src']).split('png;base64,')[1]
-        base64data = list(str(get_Color_Pixel_Cordinate(data)).replace('[', '').replace(']','').replace(' ', '').split(','))
+        try2link_req1 = str(req.get(try2link_url, allow_redirects=False).cookies.get_dict()['AppSession'])
 
-        zagl_headers = {'Host': 'za.gl', 'User-Agent': useragent, 'Accept': 'text/html', 'Accept-Language': 'en-US,en;q=0.5','Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded','Origin': 'https://za.gl', 'Referer': Selected_Url}
-        zagl_data = f'_method=POST&_csrfToken={zagl_res1.cookies.get_dict()["csrfToken"]}&ref=&f_n=slc&dot=1&givenX={givenX}&givenY={givenY}&X={base64data[0]}&Y={base64data[1]}&_Token%5Bfields%5D={zagl_Token}&_Token%5Bunlocked%5D={zagl_Token_unlocked}'
-        zagl_res2 = req.post(Selected_Url, headers=zagl_headers, data=zagl_data)
-        soup = BeautifulSoup(zagl_res2.text, 'html.parser')
-        zagl_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
-        zagl_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
-        zagl_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
-        zagl_Cook = zagl_res1.cookies.get_dict()
-        zagl_Cook.update(zagl_res2.cookies.get_dict())
-        zagl_Cook.update({'ab': '2', 'ref': 'adimin', 'sls': '0', 'overlay': '1'})
+        try2link_headers = {'Host': 'try2link.com', 'User-Agent': useragent, 'Accept': 'text/html','Accept-Encoding': 'gzip, deflate', 'Referer': 'https://newforex.online/'}
+        try2link_params = (('d', int(time()) + (60 * 4)),)
+        try2link_req2 = req.get(try2link_url, headers=try2link_headers, params=try2link_params,cookies={'AppSession': try2link_req1})
 
-        sleep(4)
+        soup = BeautifulSoup(try2link_req2.text, 'html.parser')
+        try2link_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
+        try2link_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
+        try2link_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
+
+        try2link_Cook = try2link_req2.cookies.get_dict()
+        try2link_Cook.update({'ab': '2', 'AppSession': try2link_req1, 'prefetchAd_4262220': 'true'})
+
+        sleep(5)
 
         #Earning requests...........................................................................
         #Droplink
@@ -138,12 +130,11 @@ while True:
             # else: print('Req_shortx_Err. short')
         except:pass
 
-        #zagl
-        zagl_headers = {"accept": "application/json, text/javascript, */*; q=0.01", "x-requested-with": "XMLHttpRequest","user-agent": useragent, "content-type": "application/x-www-form-urlencoded; charset=UTF-8","origin": "https://za.gl", "sec-fetch-site": "same-origin", "sec-fetch-mode": "cors","sec-fetch-dest": "empty", "referer": Selected_Url}
-        zagl_data = f"_method=POST&_csrfToken={zagl_Cook['csrfToken']}&ad_form_data={zagl_ad_form}&_Token%5Bfields%5D={zagl_Token}&_Token%5Bunlocked%5D={zagl_Token_unlocked}"
-        zagl_Mn_req = requests.post("https://za.gl/links/go", headers=zagl_headers, cookies=zagl_Cook, data=zagl_data, timeout=3)
-        if "Go With earning :)" in zagl_Mn_req.text:print('Req2')
-        else:print('Req2_Err.')
+        try2link_headers = {'Host': 'try2link.com', 'User-Agent': useragent, 'Accept': 'application/json, text/javascript','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://try2link.com', 'Referer': try2link_url}
+        try2link_data = f"_method=POST&_csrfToken={try2link_Cook['csrfToken']}&ad_form_data={try2link_ad_form}&_Token%5Bfields%5D={try2link_Token}&_Token%5Bunlocked%5D={try2link_Token_unlocked}"
+        try2link_Mn_req3 = req.post('https://try2link.com/links/go', headers=try2link_headers, cookies=try2link_Cook,data=try2link_data)
+        if "0." in try2link_Mn_req3.text: print('Req2')
+        else: print('Req2_Err.')
 
         print('Complete')
 
