@@ -1,6 +1,6 @@
 import requests
 import random
-from time import sleep
+from time import sleep, time
 from bs4 import BeautifulSoup
 from urllib import parse as Encode1
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
