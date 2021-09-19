@@ -95,22 +95,21 @@ while True:
 
         #try2link_fung Req1
         try2link_url = try2link_fung()
-        
-        req = requests.Session()
-        try2link_req1 = str(req.get(url, allow_redirects=False).cookies.get_dict()['AppSession'])
 
-        try2link_headers = {'Host': 'try2link.com','User-Agent': useragent,'Accept': 'text/html','Accept-Encoding': 'gzip, deflate','Referer': 'https://newforex.online/'}
-        try2link_params = (('d', int(time())+(60*4)),)
-        try2link_req2 = req.get( try2link_url, headers=try2link_headers, params=try2link_params, cookies={'AppSession': try2link_req1})
+        req = requests.Session()
+        try2link_req1 = str(req.get(try2link_url, allow_redirects=False).cookies.get_dict()['AppSession'])
+
+        try2link_headers = {'Host': 'try2link.com', 'User-Agent': useragent, 'Accept': 'text/html','Accept-Encoding': 'gzip, deflate', 'Referer': 'https://newforex.online/'}
+        try2link_params = (('d', int(time()) + (60 * 4)),)
+        try2link_req2 = req.get(try2link_url, headers=try2link_headers, params=try2link_params,cookies={'AppSession': try2link_req1})
 
         soup = BeautifulSoup(try2link_req2.text, 'html.parser')
         try2link_ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
         try2link_Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
         try2link_Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
 
-        try2link_Cook = req2.cookies.get_dict()
-        try2link_Cook.update({'ab': '2', 'AppSession': try2link_req1 ,'prefetchAd_4262220': 'true',    '__cf_bm': 'bG31DyrFCOuiu2hcSkUJCDl8uRRWVJfz23gJUvxHckQ-1632057053-0-AXwFWrkY4P3OMY+OVb5/2zJbB7KszkuoWHdaLgjPIMTXo9GUY2G3QQwbbHYHJFIx5R+8wbD/Q8Lnk+DfkEWB2784ePJzg31h3ujWBjnUWrzDIExQha5nUEVj1NMFw+VKCQ=='})
-
+        try2link_Cook = try2link_req2.cookies.get_dict()
+        try2link_Cook.update({'ab': '2', 'AppSession': try2link_req1, 'prefetchAd_4262220': 'true'})
 
         sleep(5)
 
@@ -134,11 +133,11 @@ while True:
         except:pass
 
         #zagl
-        try2link_headers = {'Host': 'try2link.com','User-Agent': useragent,'Accept': 'application/json, text/javascript','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest','Origin': 'https://try2link.com','Referer': try2link_url}
+        try2link_headers = {'Host': 'try2link.com', 'User-Agent': useragent, 'Accept': 'application/json, text/javascript','Accept-Encoding': 'gzip, deflate','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://try2link.com', 'Referer': try2link_url}
         try2link_data = f"_method=POST&_csrfToken={try2link_Cook['csrfToken']}&ad_form_data={try2link_ad_form}&_Token%5Bfields%5D={try2link_Token}&_Token%5Bunlocked%5D={try2link_Token_unlocked}"
-        try2link_Mn_req3 = req.post('https://try2link.com/links/go', headers=try2link_headers, cookies=try2link_Cook, data=try2link_data)
-        if "0." in try2link_Mn_req3.text:print('Req2')
-        else:print('Req2_Err.')
+        try2link_Mn_req3 = req.post('https://try2link.com/links/go', headers=try2link_headers, cookies=try2link_Cook,data=try2link_data)
+        if "0." in try2link_Mn_req3.text: print('Req2')
+        else: print('Req2_Err.')
 
         print('Complete')
 
