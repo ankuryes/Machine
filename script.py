@@ -18,7 +18,9 @@
 #     return str(dta)
 
 # app.run(host='0.0.0.0', port=8080)
-
+from os import system
+system("pip install bs4")
+ststem("pip install PIL")
 import requests
 from time import sleep
 from bs4 import BeautifulSoup
