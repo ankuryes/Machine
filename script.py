@@ -58,7 +58,7 @@ def internet_on():
 
 System_IP = ""
 if bool(internet_on())==True:
-    url = "https://za.gl/myhello4299"
+    url = "https://za.uy/myhello4299"
     useragent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
 
     sp_url = url.split('/')
@@ -79,14 +79,17 @@ if bool(internet_on())==True:
     data = f'_method=POST&_csrfToken={res1_cookies["csrfToken"]}&ref={Encode1.quote(url)}&f_n=slc&dot=1&givenX={givenX}&givenY={givenY}&X={base64data[0]}&Y={base64data[1]}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}'
     res2 = requests.post(url, headers=headers, cookies=res1_cookies, data=data)
     res2_cookies = res2.cookies.get_dict();res2_cookies.update(res1_cookies)
+    res2_cookies.update({'scr': '0.47'})
     soup = BeautifulSoup(res2.text, 'html.parser')
     ad_form = Encode1.quote(soup.find('input', {'name': 'ad_form_data'})['value'])
     Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
     Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
     print('Task 2',res2_cookies)
 
-    sleep(5)
+    sleep(3)
     headers.update({'X-Requested-With': 'XMLHttpRequest'})
     data = f'_method=POST&_csrfToken={res2_cookies["csrfToken"]}&ad_form_data={ad_form}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}'
     res3 = req.post(f'https://{sp_url[2]}/links/go', headers=headers, cookies=res2_cookies, data=data)
     print('Complete',res3.text)
+    
+    req.close()
