@@ -48,9 +48,9 @@ def get_Color_Pixel_Cordinate(data, color=(56, 178, 73)):
 def internet_on():
     try:
         global System_IP
-        req.get('https://www.google.com/')
-        try: System_IP = str(req.get("https://jsonip.com/").json()['ip'])
-        except: System_IP = str(req.get("http://ipinfo.io/ip").text)
+        requests.get('https://www.google.com/')
+        try: System_IP = str(requests.get("https://jsonip.com/").json()['ip'])
+        except: System_IP = str(requests.get("http://ipinfo.io/ip").text)
         print('+',System_IP)
         return str(System_IP)
     except: return False
@@ -58,17 +58,13 @@ def internet_on():
 
 System_IP = ""
 if bool(internet_on())==True:
-    url = "https://za.uy/myhello4299"
+    url = "https://za.gl/myhello4299"
+    useragent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
 
     sp_url = url.split('/')
-    headers = {
-        'Host': sp_url[2],
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 10; Redmi Note 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36',
-        'Accept-Encoding': 'gzip, deflate',
-        'Referer': 'https://web.telegram.org/'
-    }
+    headers = {'Host': sp_url[2],'User-Agent': useragent,'Accept-Encoding': 'gzip, deflate','Referer': 'https://web.telegram.org/'}
     res1 = req.get(url, headers=headers)
-    res1_cookies = res1.cookies.get_dict();res1_cookies.update({'ab': '2'})
+    res1_cookies = res1.cookies.get_dict();res1_cookies.update({'ab': '2','ref': 'adimin', 'sls': '0', 'overlay': '1'})
     soup = BeautifulSoup(res1.text, 'html.parser')
     Token = Encode1.quote(soup.find('input', {'name': '_Token[fields]'})['value'])
     Token_unlocked = Encode1.quote(soup.find('input', {'name': '_Token[unlocked]'})['value'])
@@ -79,14 +75,7 @@ if bool(internet_on())==True:
     print('Task 1',base64data)
 
 
-    headers = {
-        'Host': sp_url[2],
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 10; Redmi Note 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Mobile Safari/537.36',
-        'Accept-Encoding': 'gzip, deflate',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Origin': f'{sp_url[0]}//{sp_url[2]}',
-        'Referer': url,
-    }
+    headers.update({'Content-Type': 'application/x-www-form-urlencoded','Origin': f'{sp_url[0]}//{sp_url[2]}','Referer': url})
     data = f'_method=POST&_csrfToken={res1_cookies["csrfToken"]}&ref={Encode1.quote(url)}&f_n=slc&dot=1&givenX={givenX}&givenY={givenY}&X={base64data[0]}&Y={base64data[1]}&_Token%5Bfields%5D={Token}&_Token%5Bunlocked%5D={Token_unlocked}'
     res2 = requests.post(url, headers=headers, cookies=res1_cookies, data=data)
     res2_cookies = res2.cookies.get_dict();res2_cookies.update(res1_cookies)
